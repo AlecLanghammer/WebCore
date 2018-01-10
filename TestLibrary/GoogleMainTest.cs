@@ -27,7 +27,6 @@ namespace TestLibrary
         public void GoogleMainPageTest()
         {
             googleMainPage.Load();
-            googleMainPage.IsLoaded();
             googleMainPage.EnterSearchField("Test");            
         }       
     }

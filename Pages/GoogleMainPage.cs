@@ -13,7 +13,7 @@ namespace Pages
 {
     public class GoogleMainPage : BasePage
     {
-        private string expectedPageTile = "Google2";
+        private string expectedPageTile = "Google";
         private string homePageUrl;
 
         IWebDriver driver;
@@ -32,14 +32,14 @@ namespace Pages
             searchField.SendKeys(searchString);
         }
 
-        public void Load()
+        protected override void ExecuteLoad()
         {
             driver.Navigate().GoToUrl(homePageUrl);
         }
 
-        public void IsLoaded()
+        protected override bool EvaluateLoadedStatus()
         {
-            Assert.AreEqual(expectedPageTile, driver.Title);
+            return expectedPageTile == driver.Title;
         }
     }
 }

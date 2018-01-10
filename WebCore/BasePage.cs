@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace WebCore
 {
-    public abstract class BasePage
+    public abstract class BasePage : LoadableComponent<BasePage>
     {
         IWebDriver driver;
 
